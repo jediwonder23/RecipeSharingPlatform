@@ -34,18 +34,14 @@
     
     <main>
       <section class="form-wrap">
-        <h1>Verify Your Email</h1>
-        <form id="verifyEmailForm">
-          <p>
-            A verification code has been sent to your email. Please enter the
-            code below to verify your account.
-          </p>
-          <input
-            type="text"
-            id="verificationCodeInput"
-            placeholder="Verification Code"
-            required
-          />
+            <h1>Verify Email</h1>
+            <form id="verifyForm">
+              <input type="email" id="emailInputVerify" placeholder="Email" required>
+              <input type="text" id="codeInputVerify" placeholder="Verification Code" pattern=".*" required>
+
+              <input type="submit" value="Verify">
+            </form>
+        </section>
           <input type="submit" value="Verify Email" />
         </form>
       </section>
