@@ -121,7 +121,7 @@ var RecipeSharingPlatform = window.RecipeSharingPlatform || {};
         signin(email, password,
             function signinSuccess() {
                 console.log('Successfully Logged In');
-                window.location.href = 'ride.html';
+                window.location.href = 'submit.html'; // Redirect to submit.html after successful sign-in
             },
             function signinError(err) {
                 alert(err);
