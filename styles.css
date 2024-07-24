@@ -1,0 +1,137 @@
+* General styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 1rem 0;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 1rem;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+main {
+    padding: 1rem;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Home page styles */
+.hero {
+    background: url('hero-image.jpg') no-repeat center center/cover;
+    color: white;
+    padding: 2rem;
+    text-align: center;
+}
+
+.featured-recipes {
+    margin: 2rem 0;
+}
+
+.recipes-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.recipe-card {
+    background-color: white;
+    border: 1px solid #ddd;
+    padding: 1rem;
+    width: calc(33% - 2rem);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.recipe-card img {
+    max-width: 100%;
+    height: auto;
+}
+
+.recipe-card h3 {
+    margin: 1rem 0 0.5rem;
+}
+
+.recipe-card p {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.recipe-card a {
+    display: inline-block;
+    margin-top: 0.5rem;
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Recipe details page styles */
+.recipe-details {
+    background-color: white;
+    padding: 2rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.recipe-details img {
+    max-width: 100%;
+    height: auto;
+}
+
+.recipe-details h2 {
+    margin-top: 0;
+}
+
+.recipe-details section {
+    margin: 2rem 0;
+}
+
+/* Submit form styles */
+form {
+    background-color: white;
+    padding: 2rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+form label {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+form input, form textarea, form button {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+form button {
+    background-color: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
