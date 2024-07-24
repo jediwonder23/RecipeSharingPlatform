@@ -25,11 +25,11 @@ var RecipeSharingPlatform = window.RecipeSharingPlatform || {};
         AWSCognito.config.region = _config.cognito.region;
     }
 
-    Recipe_Sharing.signOut = function signOut() {
+    RecipeSharingPlatform.signOut = function signOut() {
         userPool.getCurrentUser().signOut();
     };
 
-    Recipe_Sharing.authToken = new Promise(function fetchCurrentAuthToken(resolve, reject) {
+   RecipeSharingPlatform.authToken = new Promise(function fetchCurrentAuthToken(resolve, reject) {
         var cognitoUser = userPool.getCurrentUser();
 
         if (cognitoUser) {
