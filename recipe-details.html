@@ -1,48 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Recipe Details - Echelon Recipe Sharing Platform</title>
     <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
+</head>
+<body>
     <header>
-      <h1>Echelon Recipe Sharing Platform</h1>
-      <nav>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="recipes.html">Recipes</a></li>
-          <li><a href="signin.html">Sign In</a></li>
-          <li><a href="register.html">Register</a></li>
-        </ul>
-      </nav>
+        <h1>Echelon Recipe Sharing Platform</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="recipes.html">Recipes</a></li>
+                <li><a href="signin.html">Sign In</a></li>
+                <li><a href="register.html">Register</a></li>
+            </ul>
+        </nav>
     </header>
     <main>
-      <article class="recipe-details">
-        <h2>Recipe</h2>
-        <section>
-          <h3>Ingredients</h3>
-          <ul>
-            <li>1</li>
-            <li>2</li>
-            <li>3</li>
-            <!-- More ingredients -->
-          </ul>
-        </section>
-        <section>
-          <h3>Instructions</h3>
-          <ol>
-            <li>Step 1</li>
-            <li>Step 2</li>
-            <li>Step 3</li>
-            <!-- More steps -->
-          </ol>
-        </section>
-      </article>
+        <article class="recipe-details">
+            <h2 id="recipe-title">Recipe</h2>
+            <section>
+                <h3>Ingredients</h3>
+                <ul id="ingredients-list">
+                    <!-- Ingredients will be dynamically inserted here -->
+                </ul>
+            </section>
+            <section>
+                <h3>Instructions</h3>
+                <ol id="instructions-list">
+                    <!-- Instructions will be dynamically inserted here -->
+                </ol>
+            </section>
+        </article>
     </main>
     <footer>
-      <p>&copy; 2024 Echelon Recipe Sharing Platform</p>
+        <p>&copy; 2024 Echelon Recipe Sharing Platform</p>
     </footer>
-  </body>
+    <script src="Vendor/jquery-3.1.0.js"></script>
+    <script src="recipe-details.js"></script> <!-- Include the JavaScript file -->
+</body>
 </html>
