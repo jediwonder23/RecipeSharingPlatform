@@ -17,7 +17,7 @@ $(document).ready(function() {
             instructions
         };
 
-        const apiUrl = 'https://aptzd1pmx9.execute-api.us-east-1.amazonaws.com/Dev';
+        const apiUrl = 'https://aptzd1pmx9.execute-api.us-east-1.amazonaws.com/Dev/SubmitRecipe';
 
         $.ajax({
             url: apiUrl,
@@ -38,7 +38,7 @@ $(document).ready(function() {
 
 function updateRecipesPage() {
     $.ajax({
-        url: 'https://aptzd1pmx9.execute-api.us-east-1.amazonaws.com/Dev',
+        url: 'https://aptzd1pmx9.execute-api.us-east-1.amazonaws.com/Dev/SubmitRecipe',
         type: 'GET',
         success: function(recipes) {
             const recipesContainer = $('.recipes-container');
