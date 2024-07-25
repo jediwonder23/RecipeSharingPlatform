@@ -1,7 +1,7 @@
 $(document).ready(function() {
     function getRecipeIdFromUrl() {
         const params = new URLSearchParams(window.location.search);
-        return params.get('id');
+        return params.get('Id');
     }
 
     function fetchRecipeDetails(recipeId) {
