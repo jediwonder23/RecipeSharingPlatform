@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>All Recipes - Echelon Recipe Sharing Platform</title>
-    <link rel="stylesheet" href="styles.css" />
-    <link rel="icon" href="https://main.d7y7mqv3ib2kn.amplifyapp.com/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="https://main.d7y7mqv3ib2kn.amplifyapp.com/favicon.ico" type="image/x-icon">
 </head>
 <body>
     <header>
@@ -21,14 +21,21 @@
     <main>
         <h2>All Recipes</h2>
         <div class="recipes-container">
-            <!-- Recipe Cards will be dynamically inserted here -->
+            <article class="recipe-card">
+                <h3>Chocolate Chip Cookies</h3>
+                <p>1 cup of flour<br>1/2 cup of sugar<br>1 cup of chocolate chips</p>
+                <a href="recipe-details.html?id=1">View Recipe</a>
+            </article>
+            <article class="recipe-card">
+                <h3>Spaghetti Bolognese</h3>
+                <p>200g of spaghetti<br>100g of minced beef<br>1 can of tomatoes</p>
+                <a href="recipe-details.html?id=2">View Recipe</a>
+            </article>
+            <!-- Add more recipes here -->
         </div>
     </main>
     <footer>
         <p>&copy; 2024 Echelon Recipe Sharing Platform</p>
     </footer>
-    <script src="Vendor/jquery-3.1.0.js"></script>
-    <script src="recipe.js"></script>
-    <script src="cognito-auth.js"></script>
 </body>
 </html>
