@@ -5,36 +5,34 @@ $(document).ready(function() {
         const title = $('#title').val();
         const ingredients = $('#ingredients').val();
         const instructions = $('#instructions').val();
-        const imageFile = $('#image')[0].files[0];
 
-        const reader = new FileReader();
-        reader.readAsDataURL(imageFile);
-        reader.onload = function() {
-            const imageData = reader.result.split(',')[1]; // Remove the base64 prefix
+        if (!title || !ingredients || !instructions) {
+            alert("All fields are required.");
+            return;
+        }
 
-            const recipe = {
-                title,
-                ingredients,
-                instructions,
-                image: imageData
-            };
-
-            $.ajax({
-                url: 'https://aptzd1pmx9.execute-api.us-east-1.amazonaws.com/Dev/submit-recipe',
-                type: 'POST',
-                contentType: 'application/json',
-                data: JSON.stringify(recipe),
-                success: function(response) {
-                    alert('Recipe submitted successfully!');
-                    updateRecipesPage();
-                    updateIndexPage();
-                },
-                error: function(error) {
-                    console.error('Error submitting recipe:', error);
-                    alert('Error submitting recipe. Please try again.');
-                }
-            });
+        const recipe = {
+            title,
+            ingredients,
+            instructions
         };
+
+        const apiUrl = 'https://aptzd1pmx9.execute-api.us-east-1.amazonaws.com/Dev/submit-recipe';
+
+        $.ajax({
+            url: apiUrl,
+            type: 'POST',
+            contentType: 'application/json',
+            data: JSON.stringify(recipe),
+            success: function(response) {
+                alert('Recipe submitted successfully!');
+                window.location.href = 'recipes.html'; // Redirect to recipes page after successful submission
+            },
+            error: function(error) {
+                console.error('Error submitting recipe:', error);
+                alert('Error submitting recipe. Please try again.');
+            }
+        });
     });
 });
 
