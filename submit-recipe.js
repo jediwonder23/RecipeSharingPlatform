@@ -47,7 +47,7 @@ $(document).ready(function() {
                         <article class="recipe-card">
                             <h3>${recipe.title}</h3>
                             <p>${recipe.ingredients.split('\n').join('<br>')}</p>
-                            <a href="recipe-details.html?id=${recipe.id}">View Recipe</a>
+                            <a href="recipe-details.html?id=${recipe.Id}">View Recipe</a>
                         </article>
                     `;
                     recipesContainer.append(recipeCard);
@@ -71,7 +71,7 @@ $(document).ready(function() {
                         <article class="recipe-card">
                             <h3>${recipe.title}</h3>
                             <p>${recipe.ingredients.split('\n').join('<br>')}</p>
-                            <a href="recipe-details.html?id=${recipe.id}">View Recipe</a>
+                            <a href="recipe-details.html?id=${recipe.Id}">View Recipe</a>
                         </article>
                     `;
                     featuredRecipesContainer.append(recipeCard);
