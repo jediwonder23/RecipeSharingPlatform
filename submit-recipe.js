@@ -37,7 +37,7 @@ $(document).ready(function() {
 
     function updateRecipesPage() {
         $.ajax({
-            url: 'https://gmbe2anqbl.execute-api.us-east-1.amazonaws.com/dev/submit-recipe',
+            url: 'https://gmbe2anqbl.execute-api.us-east-1.amazonaws.com/dev/submit-recipe/recipe',
             type: 'GET',
             success: function(recipes) {
                 const recipesContainer = $('.recipes-container');
@@ -61,7 +61,7 @@ $(document).ready(function() {
 
     function updateIndexPage() {
         $.ajax({
-            url: 'https://gmbe2anqbl.execute-api.us-east-1.amazonaws.com/dev/submit-recipe',
+            url: 'https://gmbe2anqbl.execute-api.us-east-1.amazonaws.com/dev/submit-recipe/recipe',
             type: 'GET',
             success: function(recipes) {
                 const featuredRecipesContainer = $('.featured-recipes .recipes-container');
