@@ -5,18 +5,22 @@ $(document).ready(function() {
     }
 
     function fetchRecipeDetails(recipeId) {
-        const apiUrl = `https://gmbe2anqbl.execute-api.us-east-1.amazonaws.com/dev/submit-recipe/${recipeId}`;
+        // Initialize DynamoDB document client
+        const docClient = new AWS.DynamoDB.DocumentClient();
 
-        $.ajax({
-            url: apiUrl,
-            type: 'GET',
-            success: function(response) {
-                const recipe = JSON.parse(response);
-                displayRecipeDetails(recipe);
-            },
-            error: function(error) {
-                console.error('Error fetching recipe details:', error);
+        const params = {
+            TableName: 'Recipe', // Your DynamoDB table name
+            Key: {
+                Id: recipeId
+            }
+        };
+
+        docClient.get(params, function(err, data) {
+            if (err) {
+                console.error('Error fetching recipe details:', err);
                 alert('Error fetching recipe details. Please try again.');
+            } else {
+                displayRecipeDetails(data.Item);
             }
         });
     }
