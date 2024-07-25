@@ -34,54 +34,60 @@ $(document).ready(function() {
             }
         });
     });
+
+    function updateRecipesPage() {
+        $.ajax({
+            url: 'https://aptzd1pmx9.execute-api.us-east-1.amazonaws.com/Dev/get-recipes',
+            type: 'GET',
+            success: function(recipes) {
+                const recipesContainer = $('.recipes-container');
+                recipesContainer.empty();
+                recipes.forEach(recipe => {
+                    const recipeCard = `
+                        <article class="recipe-card">
+                            <h3>${recipe.title}</h3>
+                            <p>${recipe.ingredients.split('\n').join('<br>')}</p>
+                            <a href="recipe-details.html?id=${recipe.id}">View Recipe</a>
+                        </article>
+                    `;
+                    recipesContainer.append(recipeCard);
+                });
+            },
+            error: function(error) {
+                console.error('Error fetching recipes:', error);
+            }
+        });
+    }
+
+    function updateIndexPage() {
+        $.ajax({
+            url: 'https://aptzd1pmx9.execute-api.us-east-1.amazonaws.com/Dev/get-recipes',
+            type: 'GET',
+            success: function(recipes) {
+                const featuredRecipesContainer = $('.featured-recipes .recipes-container');
+                featuredRecipesContainer.empty();
+                recipes.slice(0, 2).forEach(recipe => {
+                    const recipeCard = `
+                        <article class="recipe-card">
+                            <h3>${recipe.title}</h3>
+                            <p>${recipe.ingredients.split('\n').join('<br>')}</p>
+                            <a href="recipe-details.html?id=${recipe.id}">View Recipe</a>
+                        </article>
+                    `;
+                    featuredRecipesContainer.append(recipeCard);
+                });
+            },
+            error: function(error) {
+                console.error('Error fetching recipes:', error);
+            }
+        });
+    }
+
+    // Call update functions if on the appropriate pages
+    if (window.location.pathname.endsWith('recipes.html')) {
+        updateRecipesPage();
+    } else if (window.location.pathname.endsWith('index.html')) {
+        updateIndexPage();
+    }
 });
 
-function updateRecipesPage() {
-    $.ajax({
-        url: 'https://aptzd1pmx9.execute-api.us-east-1.amazonaws.com/Dev/SubmitRecipe',
-        type: 'GET',
-        success: function(recipes) {
-            const recipesContainer = $('.recipes-container');
-            recipesContainer.empty();
-            recipes.forEach(recipe => {
-                const recipeCard = `
-                    <article class="recipe-card">
-                        <h3>${recipe.title}</h3>
-                        <img src="${recipe.image}" alt="${recipe.title}">
-                        <p>${recipe.ingredients.split('\n').join('<br>')}</p>
-                        <a href="recipe-details.html?id=${recipe.id}">View Recipe</a>
-                    </article>
-                `;
-                recipesContainer.append(recipeCard);
-            });
-        },
-        error: function(error) {
-            console.error('Error fetching recipes:', error);
-        }
-    });
-}
-
-function updateIndexPage() {
-    $.ajax({
-        url: 'https://aptzd1pmx9.execute-api.us-east-1.amazonaws.com/Dev',
-        type: 'GET',
-        success: function(recipes) {
-            const featuredRecipesContainer = $('.featured-recipes .recipes-container');
-            featuredRecipesContainer.empty();
-            recipes.slice(0, 2).forEach(recipe => {
-                const recipeCard = `
-                    <article class="recipe-card">
-                        <h3>${recipe.title}</h3>
-                        <img src="${recipe.image}" alt="${recipe.title}">
-                        <p>${recipe.ingredients.split('\n').join('<br>')}</p>
-                        <a href="recipe-details.html?id=${recipe.id}">View Recipe</a>
-                    </article>
-                `;
-                featuredRecipesContainer.append(recipeCard);
-            });
-        },
-        error: function(error) {
-            console.error('Error fetching recipes:', error);
-        }
-    });
-}
