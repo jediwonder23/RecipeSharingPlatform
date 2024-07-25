@@ -5,7 +5,7 @@ $(document).ready(function() {
     }
 
     function fetchRecipeDetails(recipeId) {
-        const apiUrl = `https://gmbe2anqbl.execute-api.us-east-1.amazonaws.com/dev/submit-recipe/{id}/${recipeId}`;
+        const apiUrl = `https://gmbe2anqbl.execute-api.us-east-1.amazonaws.com/dev/submit-recipe/${recipeId}`;
 
         $.ajax({
             url: apiUrl,
