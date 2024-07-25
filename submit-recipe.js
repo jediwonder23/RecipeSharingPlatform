@@ -17,7 +17,7 @@ $(document).ready(function() {
             instructions
         };
 
-        const apiUrl = 'https://aptzd1pmx9.execute-api.us-east-1.amazonaws.com/Dev/submit-recipe';
+        const apiUrl = 'https://gmbe2anqbl.execute-api.us-east-1.amazonaws.com/dev/submit-recipe';
 
         $.ajax({
             url: apiUrl,
@@ -37,7 +37,7 @@ $(document).ready(function() {
 
     function updateRecipesPage() {
         $.ajax({
-            url: 'https://aptzd1pmx9.execute-api.us-east-1.amazonaws.com/Dev/get-recipes',
+            url: 'https://gmbe2anqbl.execute-api.us-east-1.amazonaws.com/dev/submit-recipe',
             type: 'GET',
             success: function(recipes) {
                 const recipesContainer = $('.recipes-container');
@@ -61,7 +61,7 @@ $(document).ready(function() {
 
     function updateIndexPage() {
         $.ajax({
-            url: 'https://aptzd1pmx9.execute-api.us-east-1.amazonaws.com/Dev/get-recipes',
+            url: 'https://gmbe2anqbl.execute-api.us-east-1.amazonaws.com/dev/submit-recipe',
             type: 'GET',
             success: function(recipes) {
                 const featuredRecipesContainer = $('.featured-recipes .recipes-container');
