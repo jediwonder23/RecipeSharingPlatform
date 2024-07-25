@@ -20,7 +20,7 @@ $(document).ready(function() {
             };
 
             $.ajax({
-                url: 'https://your-api-gateway-endpoint/submit-recipe',
+                url: 'https://aptzd1pmx9.execute-api.us-east-1.amazonaws.com/Dev/submit-recipe',
                 type: 'POST',
                 contentType: 'application/json',
                 data: JSON.stringify(recipe),
@@ -40,7 +40,7 @@ $(document).ready(function() {
 
 function updateRecipesPage() {
     $.ajax({
-        url: 'https://your-api-gateway-endpoint/get-recipes',
+        url: 'https://aptzd1pmx9.execute-api.us-east-1.amazonaws.com/Dev/submit-recipe',
         type: 'GET',
         success: function(recipes) {
             const recipesContainer = $('.recipes-container');
@@ -65,7 +65,7 @@ function updateRecipesPage() {
 
 function updateIndexPage() {
     $.ajax({
-        url: 'https://your-api-gateway-endpoint/get-recipes',
+        url: 'https://aptzd1pmx9.execute-api.us-east-1.amazonaws.com/Dev/submit-recipe',
         type: 'GET',
         success: function(recipes) {
             const featuredRecipesContainer = $('.featured-recipes .recipes-container');
