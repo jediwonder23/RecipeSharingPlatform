@@ -17,7 +17,7 @@ $(document).ready(function() {
             instructions
         };
 
-        const apiUrl = 'https://gmbe2anqbl.execute-api.us-east-1.amazonaws.com/dev/submit-recipe';
+        const apiUrl = 'https://8gujhwbyd0.execute-api.us-east-1.amazonaws.com/dev/submit-recipe';
 
         $.ajax({
             url: apiUrl,
